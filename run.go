@@ -11,6 +11,8 @@ import (
 	"github.com/urfave/cli/v3"
 )
 
+const name = "wc"
+
 const (
 	flagLines         = "lines"
 	flagWords         = "words"
@@ -43,7 +45,7 @@ func run(version string, args []string, stdin io.Reader, stdout, stderr io.Write
 	cmd.Writer = stdout
 	cmd.ErrWriter = stderr
 	if err := cmd.Run(context.Background(), args); err != nil {
-		_, _ = fmt.Fprintf(stderr, "wc: %v\n", err)
+		_, _ = fmt.Fprintf(stderr, name+": %v\n", err)
 		return 1
 	}
 	return 0
@@ -51,7 +53,7 @@ func run(version string, args []string, stdin io.Reader, stdout, stderr io.Write
 
 func newCommand(version string, stdin io.Reader, stdout io.Writer, fs afero.Fs) *cli.Command {
 	return &cli.Command{
-		Name:            "wc",
+		Name:            name,
 		Version:         version,
 		Usage:           "print newline, word, and byte counts for each file",
 		UsageText:       usageText,
@@ -90,14 +92,14 @@ func source(c *cli.Command, stdin io.Reader, fs afero.Fs) any {
 
 func options(c *cli.Command) []any {
 	flags := []struct {
-		name string
 		opt  any
+		name string
 	}{
-		{flagLines, command.WcLines},
-		{flagWords, command.WcWords},
-		{flagBytes, command.WcBytes},
-		{flagChars, command.WcChars},
-		{flagMaxLineLength, command.WcMaxLineLength},
+		{name: flagLines, opt: command.WcLines},
+		{name: flagWords, opt: command.WcWords},
+		{name: flagBytes, opt: command.WcBytes},
+		{name: flagChars, opt: command.WcChars},
+		{name: flagMaxLineLength, opt: command.WcMaxLineLength},
 	}
 	var opts []any
 	for _, f := range flags {
