@@ -1,26 +1,9 @@
-# yup-wc
+[![actions](https://github.com/yupsh/yup-wc/actions/workflows/actions.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/actions.yml)
+[![ci](https://github.com/yupsh/yup-wc/actions/workflows/ci.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/ci.yml)
+[![dockerfiles](https://github.com/yupsh/yup-wc/actions/workflows/dockerfiles.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/dockerfiles.yml)
+[![docs](https://github.com/yupsh/yup-wc/actions/workflows/docs.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/docs.yml)
+[![go](https://github.com/yupsh/yup-wc/actions/workflows/go.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/go.yml)
+[![release](https://github.com/yupsh/yup-wc/actions/workflows/release.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/release.yml)
+[![shell](https://github.com/yupsh/yup-wc/actions/workflows/shell.yml/badge.svg)](https://github.com/yupsh/yup-wc/actions/workflows/shell.yml)
 
-```
-NAME:
-   wc - print newline, word, and byte counts for each file
-
-USAGE:
-   wc [OPTIONS] [FILE...]
-
-   print newline, word, and byte counts for each FILE, and a total line if
-   more than one FILE is specified. A word is a non-zero-length sequence of
-   characters delimited by white space.
-   With no FILE, or when FILE is -, read standard input.
-
-VERSION:
-   dev
-
-GLOBAL OPTIONS:
-   --lines, -l            print the newline counts
-   --words, -w            print the word counts
-   --bytes, -c            print the byte counts
-   --chars, -m            print the character counts
-   --max-line-length, -L  print the maximum display width
-   --help, -h             show help
-   --version              print version information and exit
-```
+[docs](https://yupsh.github.io/docs.repl/)
