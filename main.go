@@ -36,11 +36,36 @@ var spec = clix.Spec{
 	Synopsis: synopsis,
 	Build:    build,
 	Flags: []urf.Flag{
-		&urf.BoolFlag{Name: flagLines, Aliases: []string{"l"}, Usage: "print the newline counts"},
-		&urf.BoolFlag{Name: flagWords, Aliases: []string{"w"}, Usage: "print the word counts"},
-		&urf.BoolFlag{Name: flagBytes, Aliases: []string{"c"}, Usage: "print the byte counts"},
-		&urf.BoolFlag{Name: flagChars, Aliases: []string{"m"}, Usage: "print the character counts"},
-		&urf.BoolFlag{Name: flagMaxLineLength, Aliases: []string{"L"}, Usage: "print the maximum display width"},
+		&urf.BoolFlag{
+			Name:    flagLines,
+			Aliases: []string{"l"},
+			Usage:   "print the newline counts",
+			Sources: urf.EnvVars("YUP_WC_LINES"),
+		},
+		&urf.BoolFlag{
+			Name:    flagWords,
+			Aliases: []string{"w"},
+			Usage:   "print the word counts",
+			Sources: urf.EnvVars("YUP_WC_WORDS"),
+		},
+		&urf.BoolFlag{
+			Name:    flagBytes,
+			Aliases: []string{"c"},
+			Usage:   "print the byte counts",
+			Sources: urf.EnvVars("YUP_WC_BYTES"),
+		},
+		&urf.BoolFlag{
+			Name:    flagChars,
+			Aliases: []string{"m"},
+			Usage:   "print the character counts",
+			Sources: urf.EnvVars("YUP_WC_CHARS"),
+		},
+		&urf.BoolFlag{
+			Name:    flagMaxLineLength,
+			Aliases: []string{"L"},
+			Usage:   "print the maximum display width",
+			Sources: urf.EnvVars("YUP_WC_MAX_LINE_LENGTH"),
+		},
 	},
 }
 
